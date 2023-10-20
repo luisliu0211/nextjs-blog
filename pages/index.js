@@ -1,4 +1,4 @@
-import { createConnection } from 'mysql2/promise';
+// import { createConnection } from 'mysql2/promise';
 
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
@@ -21,11 +21,11 @@ export async function getStaticProps() {
 }
 
 // const db = {
-//   host: 'tpe1.clusters.zeabur.com',
-//   user: 'root',
-//   password: '',
-//   database: '',
-//   port: "",
+// host: 'tpe1.clusters.zeabur.com',
+// user: 'root',
+// password: 'tCkHSE0G926ry54eVI7U1bRlji38XvPn',
+// database: 'blog_post',
+// port: 30277,
 // };
 function isJSON(data) {
   try {
