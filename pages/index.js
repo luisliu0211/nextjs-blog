@@ -14,19 +14,19 @@ export async function getStaticProps() {
   //   },
   // };
   const allPostsData = getSortedPostsData();
-  const data = await executeQuery();
+  // const data = await executeQuery();
   return {
-    props: { data, allPostsData },
+    props: { allPostsData },
   };
 }
 
-const db = {
-  host: 'tpe1.clusters.zeabur.com',
-  user: 'root',
-  password: 'tCkHSE0G926ry54eVI7U1bRlji38XvPn',
-  database: 'blog_post',
-  port: 30277,
-};
+// const db = {
+//   host: 'tpe1.clusters.zeabur.com',
+//   user: 'root',
+//   password: '',
+//   database: '',
+//   port: "",
+// };
 function isJSON(data) {
   try {
     JSON.parse(data);
@@ -36,20 +36,20 @@ function isJSON(data) {
   }
 }
 
-const executeQuery = async (res) => {
-  try {
-    const connection = await createConnection(db);
-    const [rows, fields] = await connection.execute('SELECT * FROM posts');
-    connection.end();
-    console.log(isJSON(rows), 'jijiejwafijei');
-    return rows;
-  } catch (error) {
-    console.error('Error executing query: ', error);
-  }
-};
-export default function Home({ data, allPostsData }) {
+// const executeQuery = async (res) => {
+//   try {
+//     const connection = await createConnection(db);
+//     const [rows, fields] = await connection.execute('SELECT * FROM posts');
+//     connection.end();
+//     console.log(isJSON(rows), 'jijiejwafijei');
+//     return rows;
+//   } catch (error) {
+//     console.error('Error executing query: ', error);
+//   }
+// };
+export default function Home({ allPostsData }) {
   console.log(allPostsData);
-  console.log(data);
+  // console.log(data);
   return (
     <Layout>
       <section className={utilStyles.headingMd}>
@@ -64,7 +64,7 @@ export default function Home({ data, allPostsData }) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {data.map(({ id, title, content }) => (
@@ -77,7 +77,7 @@ export default function Home({ data, allPostsData }) {
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Markdown List</h2>
         <ul className={utilStyles.list}>
