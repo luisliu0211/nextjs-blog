@@ -261,7 +261,7 @@ export default function Home({ data, allPostsData }) {
         <Link href="/posts/post1">this post</Link>
         <Link href="/posts/post1">this post</Link>
         <Link href="/posts/post1">this post</Link>
-        <Link href="/posts/post1">this post</Link>g
+        <Link href="/posts/post1">this post</Link>
         <p>
           Hi! This is Luis from Taiwan. I'm a newbie in programming but willing
           to explore more about front-end development. Feel free to chat or
